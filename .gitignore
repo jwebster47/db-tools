@@ -1,0 +1,10 @@
+DATA*
+*.ipynb*
+include
+*.cfg
+lib
+bin
+.DS*
+.vscode
+*pyc*
+*.db
