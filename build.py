@@ -2,8 +2,7 @@ import os
 from dbutils import *
         
 def main(db_name, data_dir, table_dirs, tables, pkeys):
-    table_dir_paths = [os.path.abspath('./' + data_dir +'/' + path)
-                      for path in table_dirs]
+    table_dir_paths = [os.path.abspath('./' + data_dir +'/' + path) for path in table_dirs]
     for dir_path, table, pkey in zip(table_dir_paths, tables, pkeys):
         for file in os.listdir(dir_path):
             file_path = os.path.join(dir_path, file)
