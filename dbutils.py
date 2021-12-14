@@ -40,9 +40,7 @@ class DBUtil:
         i = 0
         for col in self.cols:
             base_str = col + ' '
-            name_and_type_list.append(
-                base_str + (dtypes_list[i] if dtypes_list else 'text') + (' PRIMARY KEY' if col == primary_key else '')
-            )
+            name_and_type_list.append(base_str + (dtypes_list[i] if dtypes_list else 'text') + (' PRIMARY KEY' if col == primary_key else ''))
             i += 1
         return str(name_and_type_list).strip('[]').replace("'", '')
     
