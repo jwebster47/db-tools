@@ -1,4 +1,5 @@
 import csv
+import json
 import sqlite3
 from sqlite3 import Error
 
@@ -74,11 +75,10 @@ class CSVUtil(DBUtil):
             reader = csv.reader((line.replace('\0','') for line in f)) # filters out null bytes
             try:
                 for row in reader:
-                    return row
-                    break
+                    return [col.replace('h_id', 'comment_id') for col in row]
             except Exception:
                 raise
-        
+
     def read_file_create_data_str(self):
         with open(self.path, newline='') as f:
             reader = csv.reader((line.replace('\0','') for line in f)) # filters out null bytes
